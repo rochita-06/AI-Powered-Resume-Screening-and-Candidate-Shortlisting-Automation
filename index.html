@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Screening</title>
+    <meta name="description" content="Upload your resume for AI-powered screening and fast-track your career.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1>Elevate Your Career</h1>
+            <p>Upload your resume below to our AI-powered screening system. We'll match you with the right opportunities instantly.</p>
+        </header>
+
+        <section class="upload-section">
+            <form id="resume-form" class="glass-panel">
+                <div class="input-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+
+                <div class="upload-area" id="drop-zone">
+                    <div class="upload-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    </div>
+                    <h3 id="upload-text">Drag & Drop your resume (PDF)</h3>
+                    <p>or click to browse files</p>
+                    <input type="file" id="resume" name="file" accept=".pdf" required hidden>
+                </div>
+
+                <button type="submit" id="submit-btn" class="submit-btn">
+                    <span>Submit Application</span>
+                    <div class="loader" id="loader" style="display: none;"></div>
+                </button>
+            </form>
+
+            <div id="success-message" class="success-message hidden glass-panel">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <h2>Application Submitted!</h2>
+                <p>Your resume has been forwarded to HR. We will be in touch soon.</p>
+                <button type="button" id="reset-btn" class="secondary-btn">Submit Another</button>
+            </div>
+            
+            <div id="error-message" class="error-message hidden glass-panel">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                 <h2>Submission Failed</h2>
+                 <p id="error-text">There was an issue connecting to the server.</p>
+                 <button type="button" id="retry-btn" class="secondary-btn">Try Again</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
